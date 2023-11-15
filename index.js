@@ -1,11 +1,11 @@
 const express = require('express')
 const app = express()
-const pgLogger = require('./routes/pg_logger')
+const pgLogger = require('./routes/pg-logger')
 // const bodyParser = require('body-parser')
 // const cookieParser = require('cookie-parser')
 const hbs = require('hbs')
-const v1_hbs = require('./routes/v1_hbs')
-const v1_api = require('./routes/v1_api')
+const v1_hbs = require('./routes/v1-hbs')
+const v1_api = require('./routes/v1-api')
 
 require('dotenv').config()
 
@@ -36,7 +36,7 @@ app.all('*', (req, res) => {
 	pgLogger.info({
 		message: 'Unmatched URL',
 		meta: '',
-		routeName: 'v1_hbs',
+		routeName: 'v1-hbs',
 		routeFunction: 'Redirect Invalid Request',
 		routeFunctionSub: '(61)',
     url: userURL,

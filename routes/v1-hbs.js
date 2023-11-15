@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const pgLogger = require('./pg_logger')
+const pgLogger = require('./pg-logger')
 
 require('dotenv').config()
 
