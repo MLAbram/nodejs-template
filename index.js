@@ -4,7 +4,7 @@ const pgLogger = require('./routes/pg-logger')
 // const bodyParser = require('body-parser')
 // const cookieParser = require('cookie-parser')
 const hbs = require('hbs')
-const v1_hbs = require('./routes/v1-hbs')
+const handlebars = require('./routes/handlebars')
 const v1_api = require('./routes/v1-api')
 
 require('dotenv').config()
@@ -23,7 +23,7 @@ app.use(express.urlencoded({extended:false}))
 // app.use(bodyParser.urlencoded({extended: false}))
 // app.use(bodyParser.json())
 // app.use(cookieParser('secret'))
-app.use('/', v1_hbs)
+app.use('/', handlebars)
 app.use('/api/v1', v1_api)
 
 // redirect invalid requests
