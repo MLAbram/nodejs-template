@@ -5,6 +5,22 @@ const pgLogger = require('./pg-logger')
 require('dotenv').config()
 
 app.get('/', (req, res) => {
+    const userURL = req.protocol + '://' + req.get('host') + req.originalUrl
+    const userIP = req.ip
+    const userUA = req.header('User-Agent')
+
+    pgLogger.error({
+        fileName: 'handlebars.js',
+        routeName: '/',
+        routeFunction: 'Catch Error',
+        routeLine: '7',
+        message: error.message,
+        userUrl: userURL,
+        userIP: userIP,
+        userUA: userUA,
+        userReq: req.body
+    })
+
     return res.status(200).render('index', {
         page_title: 'Home',
         navbar_title: '',

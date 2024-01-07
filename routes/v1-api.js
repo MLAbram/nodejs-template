@@ -5,7 +5,7 @@ const pgLogger = require('./pg-logger')
 require('dotenv').config()
 
 app.get('/', (req, res) => {
-	res.status(200).json({status: 'ok', message: 'API v1'})
+	res.status(200).json({status: 'pass', message: 'API v1'})
 })
 
 module.exports = app
